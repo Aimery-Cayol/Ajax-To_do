@@ -1,0 +1,1 @@
+document.getElementById("category-<%= @category.id %>").insertAdjacentHTML("beforeend", "<li> <%= j render 'tasks/task', task: @task %> </li>")

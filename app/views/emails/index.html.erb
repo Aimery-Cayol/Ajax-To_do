@@ -1,0 +1,29 @@
+<head>
+    <center>
+    <h1> Messagerie </h1>
+    <br>
+
+</head>
+
+<body>
+<%= link_to "Recevoir un email", emails_path, class: "btn btn-start-order", :method => 'POST', remote: true %>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-4 col-md-4" >
+      <ul id="object">
+        <% @emails.each do  |email|%>
+          <li class="list-group-item"><%= link_to email_path(email), remote: true do %>
+            <%= email.object %></li> 
+            <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-sm-6 col-md-7 card border" id="email_element"">
+
+    </div>
+
+  </div>
+</div>
